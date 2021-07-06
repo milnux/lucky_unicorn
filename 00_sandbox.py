@@ -1,6 +1,6 @@
-# Asks users for a number
-get_number = int(input("Choose a number?"))
-# multiply by five
+# Asks user for a number
+get_number = int(input("Choose a number? "))
+# Multiply number by 5
 times_five = get_number * 5
-# output the result
-print("{} times five is equal to {}".format(get_number, times_five))
+# Output the results
+print(times_five)
