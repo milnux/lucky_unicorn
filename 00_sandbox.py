@@ -3,6 +3,6 @@ get_number = int(input("Choose a number? "))
 # Multiply number by 5
 times_five = get_number * 5
 
-answer: str = "{} times five is equal to {}".format(get_number, times_five)
+answer = "{} times five is equal to {}".format(get_number, times_five)
 # Output the results
 print(answer)
