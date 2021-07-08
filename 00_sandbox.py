@@ -1,6 +1,6 @@
-# greeting
+#  example list for for loops
 
-greeting = "hello world"
+options = {"unicorn", "horse", "zebra", "donkey"}
 
-for letter in greeting:
-    print(letter)
+for item in options:
+    print(item)
