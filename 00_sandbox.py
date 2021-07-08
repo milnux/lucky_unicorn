@@ -1,6 +1,9 @@
-#  example list for for loops
+# get name until an exit code is entered
 
-options = {"unicorn", "horse", "zebra", "donkey"}
+name = ""
+while name != "xxx":
+    name = input("who are you? ")
+    print(name)
 
-for item in options:
-    print(item)
+print()
+print("we are done!")
