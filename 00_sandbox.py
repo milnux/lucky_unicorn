@@ -1,4 +1,6 @@
-# Count up from one to 10
+# greeting
 
-for item in range(1, 10 + 1):
-    print(item)
+greeting = "hello world"
+
+for letter in greeting:
+    print(letter)
