@@ -5,19 +5,14 @@ while show_instructions.lower() != "xxx":
     show_instructions = input("Have you ever played this game before").strip().lower()
 
     # if they say yes, output 'program continues
-    if show_instructions == "yes":
-        print("program continues")
+    # if they say no, output 'display instructions'
+    # if user puts unexpected code, display error message
 
-    elif show_instructions == "y":
+    if show_instructions == "yes" or show_instructions == "y":
         print("Program continues")
 
-    # if they say no, output 'display instructions'
-    elif show_instructions == "no":
-        print("Display instructions")
+    elif show_instructions == "no" or show_instructions == "n":
+            print("Display instructions")
 
-    elif show_instructions == "n":
-        print("display instrucions")
-
-    # if user puts unexpected code, display error message
     else:
         print("Please answer yes / no")
