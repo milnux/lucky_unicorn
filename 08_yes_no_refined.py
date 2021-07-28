@@ -15,4 +15,4 @@ while show_instructions.lower() != "xxx":
             print("Display instructions")
 
     else:
-        print("Please answer yes / no")
+        print("<error> Please answer yes / no")
