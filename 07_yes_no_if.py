@@ -13,7 +13,7 @@ elif show_instructions == "no":
     print("Display instructions")
 
 elif show_instructions == "n":
-    print("display instrucions")
+    print("display instructions")
 
 # if user puts unexpected code, display error message
 else:
