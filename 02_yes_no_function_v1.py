@@ -7,14 +7,20 @@ def yes_no(question):
         response = input(question).lower()
 
         if response == "yes" or response == "y":
-        print("Program continues")
+            response = "yes"
+            return response
 
-    elif show_instructions == "no" or show_instructions == "n":
-            print("Display instructions")
+        elif response == "no" or response == "n":
+            response = "no"
+            return response
+        else:
+            print("<error> Please answer yes / no")
 
-    else:
-        print("<error> Please answer yes / no")
+
 # Main routine goes here...
 show_instructions = yes_no("Have you ever played this game before")
 
 print("You chose {}".format(show_instructions))
+print()
+having_fun = yes_no("Are you having fun?")
+print("You said {} to having fun".format(having_fun))
