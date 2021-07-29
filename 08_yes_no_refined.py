@@ -12,7 +12,7 @@ while show_instructions.lower() != "xxx":
         print("Program continues")
 
     elif show_instructions == "no" or show_instructions == "n":
-            print("Display instructions")
+        print("Display instructions")
 
     else:
         print("<error> Please answer yes / no")
