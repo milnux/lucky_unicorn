@@ -6,7 +6,7 @@ STARTING_BALANCE = 100
 
 balance = STARTING_BALANCE
 # testing loop to generate 20 tokens
-for item in range(0, 100):
+for item in range(0, 10):
     chosen_num = random.randint(1, 100)
 
     # adjust balance
@@ -27,6 +27,5 @@ for item in range(0, 100):
         balance -= 0.5
 
 # output
-print()
-print("Starting balance: ${:.2f}".format(STARTING_BALANCE))
-print("Final balance: ${:.2f}".format(balance))
+
+    print("You got a {}. Your balance is ${:.2f}".format(chosen, balance))
