@@ -13,14 +13,20 @@ for item in range(0, 100):
     if 1 <= chosen_num <= 5:
         chosen = "unicorn"
         balance += 4
-    elif 6 >= chosen_num <= 36:
+    elif 6 >= chosen_num <= 40:
         chosen = "donkey"
         balance -= 1
+    elif 41 >= chosen_num <= 70:
+        chosen = "horse"
+        balance -= 0.5
     else:
-        chosen = "horse / zebra"
+        if chosen_num % 2 == 0:
+            chosen = "horse"
+        else:
+            chosen = "zebra"
         balance -= 0.5
 
-    # output
+# output
 print()
 print("Starting balance: ${:.2f}".format(STARTING_BALANCE))
 print("Final balance: ${:.2f}".format(balance))
