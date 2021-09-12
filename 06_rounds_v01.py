@@ -7,5 +7,15 @@ play_again = input("Press <Enter> to play...")
 while play_again == "":
 
     # increase # of rounds played
-    rounds_played += 11
+    rounds_played += 1
 
+    # print round number
+    print(rounds_played)
+    balance -= 1
+    print("balance: ", balance)
+    print()
+
+    play_again = input("Press Enter to play again, or 'xxx' to quit")
+
+print()
+print("Final Balance", balance)

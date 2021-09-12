@@ -10,7 +10,7 @@ for item in range(0, 100):
     chosen_num = random.randint(1, 100)
 
     # Adjust balance
-    # If th erandom # is between 1 and 5
+    # If the random # is between 1 and 5
     # user gets a unicorn(+$4 to balance)
     if 1 <= chosen_num <= 5:
         chosen = "unicorn"
