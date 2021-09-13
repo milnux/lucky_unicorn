@@ -33,10 +33,10 @@ for item in range(0, 100):
             chosen = "zebra"
         balance -= 0.5
 
+print("You got a {}. Your balance is ${:.2f}".format(chosen, balance))
+print()
 # Output
 
-    print("You got a {}. Your balance is ${:.2f}".format(chosen, balance))
-    print()
-    print("Starting Balance: ${:.2f}".format(STARTING_BALANCE))
-    print("Final Balance: ${:.2f}".format(balance))
+print("Starting Balance: ${:.2f}".format(STARTING_BALANCE))
+print("Final Balance: ${:.2f}".format(balance))
 
