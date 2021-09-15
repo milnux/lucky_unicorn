@@ -1,4 +1,6 @@
 import random
+
+
 # Functions go here...
 
 
@@ -10,7 +12,6 @@ def yes_no(question):
         if response == "yes" or response == "y":
             response = "yes"
             return response
-
         elif response == "no" or response == "n":
             response = "no"
             return response
@@ -19,11 +20,11 @@ def yes_no(question):
 
 
 def instructions():
-    print(" ******** How To Play ********")
+    print(statement_generator("How To Play", "*"))
     print()
-    print("Choose a starting amount (minimum $1, maximum $10")
+    print("Choose a starting amount (minimum $1, maximum $10)")
     print()
-    print("Then press <enter> to play. you will either get a horse, a zebra, a donkey or a unicorn")
+    print("Then press <enter> to play. You will either get a Horse, a Zebra, a Donkey or a Unicorn")
     print()
     print("It costs $1 per round. Depending on your prize you might win some of your money back.")
     print()
@@ -32,6 +33,7 @@ def instructions():
     print("Horse: $0.50 (balance decreases by $0.50)")
     print("Zebra: $0.50 (balance decreases by $0.50)")
     print("Donkey: $0.00 (balance decreases by $1)")
+    print()
     return ""
 
 
@@ -47,7 +49,6 @@ def num_check(question, low, high):
             # if the amount is too low/ too high, give an error message
             if low < response <= high:
                 return response
-
             # output an error
             else:
                 print(error)
@@ -56,7 +57,6 @@ def num_check(question, low, high):
 
 
 def statement_generator(statement, decoration):
-
     sides = decoration * 3
 
     statement = "{} {} {}".format(sides, statement, sides)
@@ -70,19 +70,16 @@ def statement_generator(statement, decoration):
 
 
 # Main routine goes here...
-
+statement_generator("Lucky Unicorn", "~")
 played_before = yes_no("Have you ever played this game before")
 
 if played_before == "no":
     instructions()
-print()
-print("Program continues")
-print()
+
 # Ask user how much they want to play with...
 how_much = num_check("How much would you like to play with? ", 0, 10)
 print()
 print("You will be spending ${}".format(how_much))
-print()
 balance = how_much
 
 rounds_played = 0
@@ -95,22 +92,23 @@ while play_again == "":
 
     # print round number
     print()
-    print("*** Round #{} ***".format(rounds_played))
+    round_state = "Round #{}".format(rounds_played, "*")
+    statement_generator(round_state, "*")
 
     chosen_num = random.randint(1, 100)
 
     # Adjust balance
     # If the random # is between 1 and 5
-    # user gets a unicorn(+$4 to balance)
+    # user gets a unicorn (+$4 to balance)
     if 1 <= chosen_num <= 5:
-        chosen = "unicorn"
+        chosen = "Unicorn"
         prize_decoration = "!"
         balance += 4
 
     # If the random # is between 6 and 36
     # user gets a donkey (-$1 from balance)
     elif 6 >= chosen_num <= 36:
-        chosen = "donkey"
+        chosen = "Donkey"
         prize_decoration = "D"
         balance -= 1
 
@@ -119,24 +117,26 @@ while play_again == "":
     else:
         # if the number is even, set the chosen item to a horse
         if chosen_num % 2 == 0:
-            chosen = "horse"
+            chosen = "Horse"
             prize_decoration = "H"
         # otherwise set it to a zebra
         else:
-            chosen = "zebra"
+            chosen = "Zebra"
             prize_decoration = "Z"
         balance -= 0.5
 
     outcome = "You got a {}. Your balance is ${:.2f}".format(chosen, balance)
+    statement_generator(outcome, prize_decoration)
 
-    statement_generator(outcome, balance)
+    if play_again == "xxx" and balance > 0:
+        print("Thanks for playing the Lucky Unicorn Game")
 
-    if balance < 1:
-        play_again = "xxx"
+    elif play_again == "xxx":
         print("Sorry you have run out of money")
-    else:
 
-        play_again = input("Press Enter to play again, or press 'xxx' to quit")
+    else:
+        print()
+        play_again = input("Press Enter to play again, or type 'xxx' to quit")
 
 print()
 print("Final Balance ${:.2f}".format(balance))
