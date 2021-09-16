@@ -70,7 +70,7 @@ def statement_generator(statement, decoration):
 
 
 # Main routine goes here...
-statement_generator("Lucky Unicorn", "~")
+statement_generator("Welcome to Lucky Unicorn", "~")
 played_before = yes_no("Have you ever played this game before")
 
 if played_before == "no":
@@ -119,6 +119,7 @@ while play_again == "":
         if chosen_num % 2 == 0:
             chosen = "Horse"
             prize_decoration = "H"
+
         # otherwise set it to a zebra
         else:
             chosen = "Zebra"
@@ -128,10 +129,13 @@ while play_again == "":
     outcome = "You got a {}. Your balance is ${:.2f}".format(chosen, balance)
     statement_generator(outcome, prize_decoration)
 
-    if play_again == "xxx" and balance > 0:
+    if play_again == "xxx":
+        print("Sorry you have run out of money")
+        print()
         print("Thanks for playing the Lucky Unicorn Game")
 
-    elif play_again == "xxx":
+    elif balance < 1:
+        play_again = "xxx"
         print("Sorry you have run out of money")
 
     else:
@@ -140,3 +144,6 @@ while play_again == "":
 
 print()
 print("Final Balance ${:.2f}".format(balance))
+print()
+print("Thanks for playing the Lucky Unicorn Game")
+
