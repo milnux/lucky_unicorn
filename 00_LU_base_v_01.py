@@ -67,11 +67,13 @@ def statement_generator(statement, decoration):
     print(top_bottom)
 
     return ""
-
-
 # Main routine goes here...
+
+
 statement_generator("Welcome to Lucky Unicorn", "~")
-played_before = yes_no("Have you ever played this game before")
+print()
+played_before = yes_no("Have you ever played this game before?")
+
 
 if played_before == "no":
     instructions()
@@ -146,4 +148,3 @@ print()
 print("Final Balance ${:.2f}".format(balance))
 print()
 print("Thanks for playing the Lucky Unicorn Game")
-
